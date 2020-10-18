@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Inscription</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body style="background-color: gray">
+    <div class="container col-4 navbar-dark bg-dark " style="margin-top: 90px">
+
+        <form action="/inscription" method="post" class="row-4 ui form">
+            <h1 class="h3 mb-4 font-weight-normal" style="color: green; text-align: center"><strong>Please Sign
+                    Up</strong></h1>
+
+            <label for="name" class="sr-only">Name</label>
+            <input type="text" name="name" id="name" class="form-control mb-5" placeholder="name" required autofocus>
+
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" name="email" id="email" class="form-control mb-5" placeholder="Email address" required
+                autofocus>
+
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" name="password" id="password" class="form-control mb-5" placeholder="Password"
+                required>
+
+            <label for="confirmpassword" class="sr-only">Confirm Password</label>
+            <input type="password" name="confirmpassword" id="confirmpassword" class="form-control mb-5"
+                placeholder="Confirm your Password" required>
+
+            <button type="submit" class="btn btn-lg btn-success btn-block"><strong style="color: white">Sign
+                    up</strong></button>
+            <p class="mt-5 mb-3 text-muted text-center">&copy; DJIBBA </p>
+
+        </form>
+    </div>
+
+    <div class="text-center">
+        <a class="btn md-3 btn-outline-success my-2 my-sm-0 small" href="/"><strong>Back to Home</strong></a>
+    </div>
+
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

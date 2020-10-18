@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>test</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body style="background-color: gray">
+    <div class="container col-4 navbar-dark bg-dark " style="margin-top: 170px">
+        <form action="/login" method="post" class="row-4 form-signin">
+            <h1 class="h3 mb-3 font-weight-normal" style="color: green; text-align: center"><strong>Please Sign
+                    in</strong></h1>
+
+            <label for="email" class="sr-only">Email address</label>
+            <input type="email" name='email' id="email" class="form-control mb-5" placeholder="Email address" required
+                autofocus>
+
+            <label for="password" class="sr-only">Password</label>
+            <input type="password" name='password' id="password" class="form-control mb-3" placeholder="Password"
+                required>
+
+            <div class="checkbox mb-3" style="text-align: center; color: green">
+                <label>
+                    <input type="checkbox" value="remember-me"> Remember me
+                </label>
+            </div>
+            <button class="btn btn-lg btn-outline-success btn-success btn-block" type="submit"><strong
+                    style="color: white">Sign in</strong></button>
+
+            <div class="text-center">
+                <a class="btn md-3 btn-outline-success my-2 my-sm-0 small" href="/inscription">Create an Account!</a>
+            </div>
+
+            <p class="mt-5 mb-3 text-muted text-center">&copy; DJIBBA </p>
+        </form>
+    </div>
+
+    <div class="text-center">
+        <a class="btn md-3 btn-outline-success my-2 my-sm-0 small" href="/"><strong>Back to Home</strong></a>
+    </div>
+
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>
