@@ -13,6 +13,7 @@ mongoose.connect('mongodb://localhost/loginPage', { useNewUrlParser: true, useUn
 app.use(express.static('public'));
 app.set('views', __dirname + '/views'); // general config
 app.set('view engine', 'ejs');
+
 app.use((req, res, next) => {
     res.setHeader('Access-Control-Allow-Origin', '*');
     res.setHeader('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content, Accept, Content-Type, Authorization');
@@ -29,7 +30,7 @@ app.use(session({
 }));
 
 app.get('/', (req, res, next) => {
-    res.render('index');
+    res.render('login');
 });
 
 
