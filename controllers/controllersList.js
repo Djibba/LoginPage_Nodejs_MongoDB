@@ -11,7 +11,6 @@ exports.Inscription = (req, res, next) => {
                 "name": req.body.name,
                 "email": req.body.email,
                 "password": hash,
-                "confirmpassword": req.body.confirmpassword
             })
             if (req.body.password != req.body.confirmpassword) {
                 inscript.save()

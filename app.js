@@ -4,11 +4,11 @@ const session = require('express-session');
 const mongoose = require('mongoose');
 const controller = require('./controllers/controllersList');
 
+const insModel = require('./models/inscriptionModel');
+
 const app = express();
 
-mongoose.connect('mongodb://localhost/loginPage', { useNewUrlParser: true, useUnifiedTopology: true })
-    .then(() => console.log('Connexion à MongoDB réussie !'))
-    .catch(() => console.log('Connexion à MongoDB échouée !'));
+require('./models/dbconfig');
 
 app.use(express.static('public'));
 app.set('views', __dirname + '/views'); // general config
@@ -49,5 +49,11 @@ app.get('/inscription', (req, res, next) => {
 
 app.post('/inscription', controller.Inscription);
 
-
+//---------------API------------
+app.get('/api', (req, res) =>{
+    insModel.find((err, data) => {
+        if(!err) res.send(data)
+        else console.log((err))
+    })
+})
 module.exports = app;
