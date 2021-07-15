@@ -2,6 +2,7 @@ const insModel = require('../models/inscriptionModel');
 const jwt = require('jsonwebtoken');
 const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
+const mailer = require('nodemailer');
 
 const User = mongoose.model('Inscription');
 
