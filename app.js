@@ -56,4 +56,17 @@ app.get('/api', (req, res) =>{
         else console.log((err))
     })
 })
+
+//---------Single User----------------
+app.get('/user:id', (req, res) => {
+    var id = 1;
+    insModel.find((err, data) =>{
+        if (!err) {
+            data[0]._id = id
+            res.render('compte',{data: data, id: id})
+        }
+        else console.log(err) 
+    });
+    
+})
 module.exports = app;

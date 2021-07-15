@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Compte</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/bootstrap.css">
+</head>
+
+<body>
+    <div class="row">
+        <div class="col-md-6 mx-auto text-center">
+
+            <h1 class="my-5">Profil <%= id %>  </h1>
+
+            <h2 class="lead"> Email : <%= data[0].email %> </h2>
+
+            <hr>
+    
+            <h2 class="lead mt-5"> Name : <%= data[0].name %>  </h2>
+    
+            <!-- <p><a href="{{ path('app_compte_edit') }}">Changer son profil</a>   |    <a href="{{ path('app_compte_change_password') }}">Changer son mot de passe</a></p> -->
+
+            <p class="mt-5 mb-3 text-muted text-center">&copy; DJIBBA </p>
+        </div>
+    </div>
+
+
+    </div>
+    <script src="/js/jquery-3.5.1.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+</body>
+
+</html>

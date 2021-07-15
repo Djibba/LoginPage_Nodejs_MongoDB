@@ -1,28 +1,30 @@
 const insModel = require('../models/inscriptionModel');
 const jwt = require('jsonwebtoken');
+const mongoose = require('mongoose');
 const bcrypt = require('bcrypt');
 
-exports.Inscription = (req, res, next) => {
-    delete req.body._id;
+const User = mongoose.model('Inscription');
 
-    bcrypt.hash(req.body.password, 10)
-        .then(hash => {
-            const inscript = new insModel({
-                "name": req.body.name,
-                "email": req.body.email,
-                "password": hash,
-            })
-            if (req.body.password != req.body.confirmpassword) {
-                inscript.save()
-                    .then(() => res.status(400).json({ message: 'Confirmation mot de passe incorrect' }))
-                    .catch(error => res.status(400).json({ error }))
-            } else {
-                inscript.save()
-                    .then(() => res.status(201).json({ message: 'Contact ' + req.body.name + ' enregistré avec succès' }))
-                    .catch(error => res.status(400).json({ error }))
-            }
-        })
-        .catch(error => res.status(500).json({ error }))
+exports.Inscription = (req, res, next) => {
+
+    var hash = bcrypt.hashSync(req.body.password, 10);
+
+    var user = new User();
+    user.name = req.body.name;
+    user.email = req.body.email;
+    user.password = hash;
+
+    if (req.body.password != req.body.confirmpassword) {
+        user.save()
+            .then(() => res.status(400).json({ message: 'Confirmation mot de passe incorrect' }))
+            .catch(error => res.status(400).json({ error }))
+    } else {
+        user.save()
+            .then(() => res.status(201).json({ message: 'Contact ' + req.body.name + ' enregistré avec succès' }))
+            .catch(error => res.status(400).json({ error }));
+
+    }
+
 };
 
 exports.login = (req, res, next) => {
